@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button onclick="getStaffs()">getStaffs</button>
+    <button onclick="addStaff()">addStaff</button>
+    <button onclick="updateStaff()">updateStaff</button>
+    <button onclick="removeStaff()">removeStaff</button>
+    <button onclick="getDepartments()">getDepartments</button>
+    <input type="text" id="staffId" value="0">
+    <script>
+        const APIURL = 'http://localhost:8080/'
+
+        function getStaffs() {
+            $.ajax({
+                url: APIURL + 'staffs',
+                type: "GET",
+                success: function (result) {
+                    console.log(result);
+                    staffsCount = result.length;
+                },
+                error: function (error) {
+                    $('#result').html(JSON.stringify(error));
+                }
+            });
+        };
+        var staffsCount = 0;
+        function addStaff() {
+            var newStaff = {
+                name: 'Nguyễn Văn ' + staffsCount,
+                doB: '10/11/1993',
+                salaryScale: "1.5",
+                startDate: '10/11/2021',
+                departmentId: 'Dept03',
+                annualLeave: "10",
+                title: "Technical Leader",
+            };
+            fetch(
+                APIURL + 'staffs',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(newStaff),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                }
+            ).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                console.log(response);
+                staffsCount++;
+                console.log("add successfully!");
+            }).catch(error => {
+                console.log('add staffs', error);
+            });
+        }
+
+        function updateStaff() {
+            const now = new Date();
+            var staff = {
+                id: 3,
+                name: 'Nguyễn Văn Updated ' + now.getDate() + '/' + (now.getMonth() + 1) + ' ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds(),
+                doB: '10/11/1993',
+                salaryScale: "9",
+            };
+            fetch(
+                APIURL + 'staffs',
+                {
+                    method: 'PATCH',
+                    body: JSON.stringify(staff),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                }
+            ).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                console.log(response);
+                console.log("update successfully!");
+            }).catch(error => {
+                console.log('update staff error: ', error);
+            });
+        }
+        function removeStaff() {
+            fetch(
+                APIURL + 'staffs/' + document.getElementById("staffId").value,
+                {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                }
+            ).then(response => {
+                if (response.ok) {
+                    return response;
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                // console.log(response);
+                console.log("remove successfully!");
+            }).catch(error => {
+                console.log('remove staff', error);
+            });
+        }
+        function getDepartments() {
+            fetch(
+                APIURL + 'departments',
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                }
+            ).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                console.log(response);
+            }).catch(error => {
+                console.log('get departments', error);
+            });
+        }
+    </script>
+</body>
+
+</html>
