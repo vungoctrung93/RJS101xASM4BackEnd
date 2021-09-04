@@ -14,22 +14,34 @@
     <button onclick="addStaff()">addStaff</button>
     <button onclick="updateStaff()">updateStaff</button>
     <button onclick="removeStaff()">removeStaff</button>
-    <button onclick="getDepartments()">getDepartments</button>
     <input type="text" id="staffId" value="0">
+    <button onclick="getDepartments()">getDepartments</button>
+    <button onclick="getStaffsOfDepartments()">getStaffsOfDepartments</button>
+    <input type="text" id="departmentId" value="Dept01">
+    <button onclick="getStaffsSalary()">getStaffsSalary</button>
     <script>
         const APIURL = 'http://localhost:8080/'
 
         function getStaffs() {
-            $.ajax({
-                url: APIURL + 'staffs',
-                type: "GET",
-                success: function (result) {
-                    console.log(result);
-                    staffsCount = result.length;
-                },
-                error: function (error) {
-                    $('#result').html(JSON.stringify(error));
+            fetch(
+                APIURL + 'staffs',
+                {
+                    method: 'GET',
                 }
+            ).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                console.log(response);
+            }).catch(error => {
+                console.log('get departments', error);
             });
         };
         var staffsCount = 0;
@@ -154,6 +166,50 @@
                 console.log(response);
             }).catch(error => {
                 console.log('get departments', error);
+            });
+        }
+        function getStaffsOfDepartments() {
+            fetch(
+                APIURL + 'departments/' + document.getElementById("departmentId").value,
+                {
+                    method: 'GET',
+                }
+            ).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                console.log(response);
+            }).catch(error => {
+                console.log('get staff', error);
+            });
+        }
+        function getStaffsSalary(){
+            fetch(
+                APIURL + 'staffsSalary',
+                {
+                    method: 'GET',
+                }
+            ).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            }, error => {
+                throw error;
+            }).then(response => {
+                console.log(response);
+            }).catch(error => {
+                console.log('get staff salary', error);
             });
         }
     </script>
