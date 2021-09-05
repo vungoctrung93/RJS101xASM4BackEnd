@@ -23,4 +23,4 @@ app.use('/staffs', staffRoutes);
 app.use('/departments', departmentRoutes);
 app.use('/staffsSalary', staffsSalaryRoutes);
 
-app.listen(80);
+app.listen(8080);
