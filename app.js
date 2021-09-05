@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-var fs = require('fs');
-var http = require('http');
-var https = require('https');
-var privateKey  = fs.readFileSync('./sslcert/selfsigned.key', 'utf8');
-var certificate = fs.readFileSync('./sslcert/selfsigned.crt', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
+// var fs = require('fs');
+// var http = require('http');
+// var https = require('https');
+// var privateKey  = fs.readFileSync('./sslcert/selfsigned.key', 'utf8');
+// var certificate = fs.readFileSync('./sslcert/selfsigned.crt', 'utf8');
+// var credentials = {key: privateKey, cert: certificate};
 
 
 const staffRoutes = require('./routes/staffs');
@@ -32,8 +32,8 @@ app.use('/departments', departmentRoutes);
 app.use('/staffsSalary', staffsSalaryRoutes);
 
 
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+// var httpServer = http.createServer(app);
+// var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080);
-httpsServer.listen(8443);
+app.listen(8080);
+// httpsServer.listen(8443);
