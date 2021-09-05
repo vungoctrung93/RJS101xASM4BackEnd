@@ -51,7 +51,7 @@ exports.updateStaff = (req, res, next) => {
     }
     if (req.body.doB) {
       try{
-        Date.parse(req.body.doB);
+        req.body.doB = new Date(req.body.doB);
       }catch(e){
         console.log("Staff update doB wrong date format");
       }
@@ -62,7 +62,7 @@ exports.updateStaff = (req, res, next) => {
     }
     if (req.body.startDate) {
       try{
-        Date.parse(req.body.startDate);
+        req.body.doB = new Date(req.body.doB);
       }catch(e){
         console.log("Staff update startDate wrong date format");
       }
