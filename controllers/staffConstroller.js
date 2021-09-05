@@ -95,6 +95,7 @@ exports.removeStaff = (req, res, next) => {
     });
     STAFFS.splice(index, 1);
     console.log('Staff with id: ' + req.params.id + ' has been removed!');
-    res.status(204).json(STAFFS);
+    
+    res.status(200).json(STAFFS);
   }
 };
