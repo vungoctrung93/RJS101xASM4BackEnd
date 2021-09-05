@@ -50,12 +50,22 @@ exports.updateStaff = (req, res, next) => {
       STAFFS[index].name = req.body.name;
     }
     if (req.body.doB) {
+      try{
+        Date.parse(req.body.doB);
+      }catch(e){
+        console.log("Staff update doB wrong date format");
+      }
       STAFFS[index].doB = req.body.doB;
     }
     if (req.body.salaryScale) {
       STAFFS[index].salaryScale = req.body.salaryScale;
     }
     if (req.body.startDate) {
+      try{
+        Date.parse(req.body.startDate);
+      }catch(e){
+        console.log("Staff update startDate wrong date format");
+      }
       STAFFS[index].startDate = req.body.startDate;
     }
     if (req.body.departmentId) {
