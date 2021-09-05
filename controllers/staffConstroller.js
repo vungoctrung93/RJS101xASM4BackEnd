@@ -25,15 +25,13 @@ exports.addStaff = (req, res, next) => {
   });
   STAFFS.push(newStaff);
   DEPARTMENTS.forEach(department => {
-    if(department.id === newStaff.departmentId) {
-      department.numberOfStaff ++;
+    if (department.id === newStaff.departmentId) {
+      department.numberOfStaff++;
     }
   });
   console.log('New staff added!');
   // add staff in db
-  res.status(201).json({
-    staff: newStaff,
-  });
+  res.status(201).json(STAFFS);
 };
 
 
@@ -75,9 +73,7 @@ exports.updateStaff = (req, res, next) => {
     console.log('Staff at index ' + index + ' has been updated');
     // update staff in db
 
-    res.status(201).json({
-      staff: STAFFS[index],
-    });
+    res.status(201).json(STAFFS);
   }
 };
 
@@ -93,12 +89,12 @@ exports.removeStaff = (req, res, next) => {
     res.status(404).json();
   } else {
     DEPARTMENTS.forEach(department => {
-      if(department.id === STAFFS[index].departmentId) {
+      if (department.id === STAFFS[index].departmentId) {
         department.numberOfStaff--;
       }
     });
     STAFFS.splice(index, 1);
     console.log('Staff with id: ' + req.params.id + ' has been removed!');
-    res.status(204).json();
+    res.status(204).json(STAFFS);
   }
 };
