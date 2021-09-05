@@ -18,6 +18,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/', staffRoutes);
 app.use('/staffs', staffRoutes);
 app.use('/departments', departmentRoutes);
 app.use('/staffsSalary', staffsSalaryRoutes);
