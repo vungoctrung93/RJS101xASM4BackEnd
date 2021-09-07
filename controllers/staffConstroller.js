@@ -80,6 +80,7 @@ exports.updateStaff = (req, res, next) => {
     if (req.body.image) {
       STAFFS[index].image = req.body.image;
     }
+    //tested
     console.log('Staff at index ' + index + ' has been updated');
     // update staff in db
 
