@@ -19,7 +19,7 @@ exports.addStaff = (req, res, next) => {
 
   newStaff.id = STAFFS.length;
   STAFFS.forEach(staff => {
-    if (staff.id > newStaff.id) {
+    if (staff.id >= newStaff.id) {
       newStaff.id = staff.id + 1;
     }
   });
