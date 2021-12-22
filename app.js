@@ -34,7 +34,8 @@ app.use('/staffsSalary', staffsSalaryRoutes);
 app.use(
   session({
     cookie:"abc=def",
-    "abc":"ghi"
+    abc:"ghi",
+    secret: "mySecret"
   })
 );
 
