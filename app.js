@@ -30,7 +30,8 @@ app.use('/', staffRoutes);
 app.use('/staffs', staffRoutes);
 app.use('/departments', departmentRoutes);
 app.use('/staffsSalary', staffsSalaryRoutes);
-
+var cookieParse = require('cookie-parser');
+app.use(cookieParse);
 
 // var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);
