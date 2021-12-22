@@ -2,7 +2,6 @@
 var { STAFFS } = require('../data/staffs')
 var { DEPARTMENTS } = require('../data/departments')
 exports.getStaffs = (req, res, next) => {
-  res.cookie("abc","def");
   res.status(200).json(STAFFS);
 };
 
