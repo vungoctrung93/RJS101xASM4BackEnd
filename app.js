@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 // var fs = require('fs');
 // var http = require('http');
@@ -30,8 +31,13 @@ app.use('/', staffRoutes);
 app.use('/staffs', staffRoutes);
 app.use('/departments', departmentRoutes);
 app.use('/staffsSalary', staffsSalaryRoutes);
-var cookieParse = require('cookie-parser');
-app.use(cookieParse);
+app.use(
+  session({
+    cookie:"abc=def",
+    "abc":"ghi"
+  })
+);
+
 
 // var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);
