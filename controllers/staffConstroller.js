@@ -71,9 +71,19 @@ exports.updateStaff = (req, res, next) => {
       }
       STAFFS[index].startDate = req.body.startDate;
     }
-    if (req.body.departmentId) {
-      STAFFS[index].departmentId = req.body.departmentId;
+    if (req.body.departmentId && STAFFS[index].departmentId !== req.body.departmentId) {
+      for (let i = 0; i < DEPARTMENTS.length; i++) {
+        if (DEPARTMENTS[i].id === STAFFS[index].departmentId) {
+          DEPARTMENTS[i].numberOfStaff--;
+          if(DEPARTMENTS[i].numberOfStaff < 0){
+            DEPARTMENTS[i].numberOfStaff = 0;
+          }
+        }else if (DEPARTMENTS[i].id === req.body.departmentId) {
+          DEPARTMENTS[i].numberOfStaff++;
+        }
+      }
     }
+    STAFFS[index].departmentId = req.body.departmentId;
     if (req.body.annualLeave) {
       STAFFS[index].annualLeave = req.body.annualLeave;
     }
