@@ -10,7 +10,7 @@ exports.STAFFS =
           departmentId: 'Dept01',
           annualLeave: 1,
           overTime: 1,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 1,
@@ -21,7 +21,7 @@ exports.STAFFS =
           departmentId: "Dept02",
           annualLeave: 2,
           overTime: 3,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 2,
@@ -32,7 +32,7 @@ exports.STAFFS =
           departmentId: "Dept04",
           annualLeave: 4,
           overTime: 5,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 3,
@@ -43,7 +43,7 @@ exports.STAFFS =
           departmentId: "Dept03",
           annualLeave: 6,
           overTime: 7,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 4,
@@ -54,7 +54,7 @@ exports.STAFFS =
           departmentId: "Dept03",
           annualLeave: 8,
           overTime: 1,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 5,
@@ -65,7 +65,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 6,
@@ -76,7 +76,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 7,
@@ -87,7 +87,7 @@ exports.STAFFS =
           departmentId: "Dept03",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 8,
@@ -98,7 +98,7 @@ exports.STAFFS =
           departmentId: "Dept04",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 9,
@@ -109,7 +109,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: "https://fvc-dn-coding.web.app/images/person-icon.png",
+          image: "https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png",
         },
         {
           id: 10,
@@ -120,7 +120,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 11,
@@ -131,7 +131,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 12,
@@ -142,7 +142,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 13,
@@ -153,7 +153,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 14,
@@ -164,7 +164,7 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
         {
           id: 15,
@@ -175,6 +175,6 @@ exports.STAFFS =
           departmentId: "Dept05",
           annualLeave: 9,
           overTime: 10,
-          image: 'https://fvc-dn-coding.web.app/images/person-icon.png',
+          image: 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png',
         },
       ]
